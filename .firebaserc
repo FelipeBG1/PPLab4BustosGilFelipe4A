@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pplab4-4b5ec": {
+      "hosting": {
+        "PrimerParcialLab4BustosGilFelipe": [
+          "pplab4-4b5ec"
+        ]
+      }
+    }
+  }
+}
