@@ -43,7 +43,7 @@
               </div>
           </div> 
           <hr class="mb-4">
-          <button type="submit" class="mb-5 btn btn-primary btn-lg btn-block">Agregar repartidor</button>
+          <button type="submit" class="mb-5 btn btn-primary btn-lg btn-block" [disabled]='grupoControles.invalid' >Agregar repartidor</button>
           <small class="success">{{this.agregado}}</small>
         </form>
       </div>
