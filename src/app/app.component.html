@@ -1,2 +1,22 @@
-<p>En app module</p>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink] = "['/bienvenido']">Bienvenido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink] = "['/login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink] = "['/repartidor/altaRepartidor']">Alta repartidor</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br/>
+  <br>
+
 <router-outlet></router-outlet>

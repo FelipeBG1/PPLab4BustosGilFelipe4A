@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="mt-5 row">
+      <div class="col-md-4 order-md-2 mb-4">
+          <h4>Paises</h4>
+        <app-tabla-paises (paisEvent)="recibirPais($event)"></app-tabla-paises>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Repartidor</h4>
+        <form class="needs-validation" [formGroup]="grupoControles" (ngSubmit)='cargarRepartidor()'>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="firstName">DNI</label>
+                <input type="text" class="form-control" formControlName='dni' placeholder="Ingrese el dni">
+                <small class="invalid" *ngIf="grupoControles.controls.dni.errors?.required && grupoControles.controls.dni.touched">El dni es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input type="text" class="form-control" formControlName='nombre' placeholder="Ingrese el nombre">
+              <small class="invalid" *ngIf="grupoControles.controls.nombre.errors?.required && grupoControles.controls.nombre.touched">El nombre es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="firstName">Edad</label>
+                <input type="text" class="form-control" formControlName='edad' placeholder="Ingrese la edad">
+                <small class="invalid" *ngIf="grupoControles.controls.edad.errors?.required && grupoControles.controls.edad.touched">El edad es requerido</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Capacidad Transporte</label>
+                <input type="text" class="form-control" formControlName='capacidadTransporte' placeholder="Ingrese el capacidadTransporte">
+                <small class="invalid" *ngIf="grupoControles.controls.capacidadTransporte.errors?.required && grupoControles.controls.capacidadTransporte.touched">La capacidad es requerida</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="firstName">Pais Origen</label>
+                <input type="text" class="form-control" formControlName='pais' placeholder="Ingrese el pais">
+                <small class="invalid" *ngIf="grupoControles.controls.pais.errors?.required && grupoControles.controls.pais.touched">El pais es requerido</small>
+            </div>
+            <div class="col-md-12 mb-5">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="upropia" formControlName='unidadPropia'>
+                  <label for="recordar" class="form-check-label" for="upropia">
+                    Tiene unidad propia
+                  </label>
+                </div>
+              </div>
+          </div> 
+          <hr class="mb-4">
+          <button type="submit" class="mb-5 btn btn-primary btn-lg btn-block">Agregar repartidor</button>
+          <small class="success">{{this.agregado}}</small>
+        </form>
+      </div>
+    </div>
+</div>

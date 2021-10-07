@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-xxl-10">
+            <div *ngFor="let pais of paises">
+                <div class="mb-2">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <p>{{pais.name}}</p>
+                                <img src={{pais.flag}} width="150px" height="100px"/>
+                            </div>
+                            <div style="margin: auto;">
+                                <button class="mt-2 btn btn-dark" (click)="cargarNacionalidad(pais)">Seleccionar</button>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>                 
+            </div>
+        </div>
+    </div>
+</div>

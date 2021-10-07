@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="mt-5 row">
+      <div class="col-md-4 order-md-2 mb-4">
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Login</h4>
+        <form class="needs-validation" [formGroup]="grupoControles">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Usuario</label>
+              <input type="text" class="form-control" formControlName='usuario' placeholder="Ingrese el usuario" [(ngModel)] = "usuario">
+              <small class="invalid" *ngIf="grupoControles.controls.usuario.errors?.required && grupoControles.controls.usuario.touched">El usuario es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Clave</label>
+              <input type="password" class="form-control" formControlName='clave' placeholder="Ingrese la clave" [(ngModel)] = "clave">
+              <small class="invalid" *ngIf="grupoControles.controls.clave.errors?.required && grupoControles.controls.clave.touched">La clave es requerida</small>
+            </div>
+          </div> 
+          <hr class="mb-4">
+          <button class="mb-5 btn btn-primary btn-lg btn-block" (click)="this.empleadoLogin()">Empleado</button>
+          <button class="mb-5 btn btn-primary btn-lg btn-block" (click)="this.adminLogin()">Admin</button>
+          <button type="submit" class="mb-5 btn btn-primary btn-lg btn-block" (click)="this.verificar()">Ingresar</button>
+        </form>
+      </div>
+    </div>
+</div>
