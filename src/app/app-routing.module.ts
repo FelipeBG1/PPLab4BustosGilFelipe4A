@@ -11,7 +11,7 @@ import { ErrorComponent } from './paginas/error/error.component';
 const routes: Routes = [
   { path : 'bienvenido', component: BienvenidaComponent},
   { path : 'login', component: LoginComponent},
-  { path: '', pathMatch:'full', redirectTo: 'login'},
+  { path: '', pathMatch:'full', redirectTo: 'bienvenido'},
   { path : 'errorLogeo', component: ErrorLogueadoComponent},
   { path: 'repartidor', loadChildren: () => import('./modulos/repartidor/repartidor.module').then(m => m.RepartidorModule), canActivate: [UserGuard]},
   { path : '**', component: ErrorComponent},
