@@ -1,0 +1,24 @@
+<main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Repartidores</h1>
+          <app-listado-repartidores (repartidorEvent)="recibirRepartidor($event)"></app-listado-repartidores>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Detalle repartidor</h2>
+          <app-detalles-repartidor [repartidor]=this.repartidor></app-detalles-repartidor>
+          <button class="mt-2 btn btn-dark" (click)="this.limpiar()">Limpiar</button>
+        </div>
+        <div class="col-md-6">
+          <h2>Detalle pais</h2>
+          <app-detalle-pais [repartidor]=this.repartidor></app-detalle-pais>
+          <button class="mt-2 btn btn-dark" (click)="this.limpiar()">Limpiar</button>
+        </div>
+      </div>
+      <hr>
+    </div> 
+  </main>
+

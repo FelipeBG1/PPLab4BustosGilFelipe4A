@@ -1,0 +1,8 @@
+<div>
+    <p *ngIf="this.repartidor == ''">Seleccione un repartidor para ver los detalles su pais</p>
+    <div *ngIf="this.repartidor != ''">
+        <p>{{this.repartidor.paisOrigen.nombre}}</p>
+        <img src="{{this.repartidor.paisOrigen.bandera}}" width="100px" height="70px"/>
+    </div>
+</div>
+

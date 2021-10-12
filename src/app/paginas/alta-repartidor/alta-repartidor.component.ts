@@ -15,32 +15,39 @@ export class AltaRepartidorComponent implements OnInit {
   dni : number = 0;
   edad : number = 0;
   capacidadTransporte : number = 0;
-  pais : string = "";
+  pais : string = '';
   unidadPropia : boolean = false;
   agregado : string = "";
+  bandera : string = "";
 
   constructor(private fb : FormBuilder,private firestore : AngularFirestore) { }
 
   ngOnInit(): void {
     this.grupoControles = this.fb.group({
       'nombre' : ['',Validators.required],
-      'dni' : ['',Validators.required],
-      'edad' : ['',Validators.required],
-      'capacidadTransporte' : ['',Validators.required],
+      'dni' : ['',[Validators.required,Validators.min(10000000),Validators.max(99999999)]],
+      'edad' : ['',[Validators.required,Validators.min(18),Validators.max(80)]],
+      'capacidadTransporte' : ['',[Validators.required,Validators.min(1)]],
       'pais' : ['',Validators.required],
-      'unidadPropia' : '',
+      'unidadPropia' : [false]
     });
   }
 
   recibirPais($event : any)
   {
+    this.pais = $event.name;
     this.grupoControles.get('pais')?.setValue($event.name);
-    console.log(this.pais);
+    this.bandera = $event.flag;
   }
 
   cargarRepartidor()
   {
-    let repartidor : Repartidor = new Repartidor(this.grupoControles.get("dni")?.value,this.grupoControles.get("nombre")?.value,this.grupoControles.get("edad")?.value,this.grupoControles.get("capacidadTransporte")?.value,this.grupoControles.get("pais")?.value,this.grupoControles.get("unidadPropia")?.value);
+    let pais : any = 
+    {
+      nombre : this.grupoControles.get("pais")?.value,
+      bandera : this.bandera
+    }
+    let repartidor : Repartidor = new Repartidor(this.grupoControles.get("dni")?.value,this.grupoControles.get("nombre")?.value,this.grupoControles.get("edad")?.value,this.grupoControles.get("capacidadTransporte")?.value,pais,this.grupoControles.get("unidadPropia")?.value);
     
     this.agregarPeliculaBD({...repartidor}).then((response : any) => {
       console.log("repartidor registrado");
@@ -48,6 +55,8 @@ export class AltaRepartidorComponent implements OnInit {
       setTimeout(() => {
         this.agregado = "";
         this.grupoControles.reset();
+        this.bandera = "";
+        this.pais = "";
       }, 3000);
     })
     .catch((response : any) => {

@@ -23,7 +23,6 @@ export class BienvenidaComponent implements OnInit {
       this.datoGit = dato;
       console.log(this.datoGit);
     });
-    console.log(this.datoGit.name);
   }
 
 }

@@ -1,0 +1,29 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>  
+        <th scope="col">DNI</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Capacidad de transporte</th>
+        <th scope="col">Unidad Propia</th>
+        <th scope="col">Pais de origen</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let repartidor of repartidores">
+                <td>{{repartidor.dni}}</td>
+                <td>{{repartidor.nombre}}</td>
+                <td>{{repartidor.edad}}</td>
+                <td>{{repartidor.capacidadTransporte}}</td>
+                <td>{{repartidor.unidadPropia}}</td>
+                <td>
+                    <img src={{repartidor.paisOrigen.bandera}} width="100px" height="70px"style="cursor: pointer;"/>
+                </td>
+                <td>
+                    <button class="mt-2 btn btn-outline-light" (click)="enviarRepartidor(repartidor)">Seleccionar</button>
+                </td>
+            </tr> 
+    </tbody>
+  </table>
+  
+

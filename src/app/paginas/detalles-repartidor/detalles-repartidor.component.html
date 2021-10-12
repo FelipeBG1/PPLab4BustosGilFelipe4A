@@ -1,0 +1,11 @@
+<div>
+    <p *ngIf="this.repartidor == ''">Seleccione un repartidor para ver sus detalles</p>
+    <div *ngIf="this.repartidor != ''">
+        <p>DNI: {{this.repartidor.dni}}</p>
+        <p>Nombre: {{this.repartidor.nombre}}</p>
+        <p>Edad: {{this.repartidor.edad}}</p>
+        <p>Capacidad de transporte: {{this.repartidor.capacidadTransporte}}</p>
+        <p>Unidad propia: {{this.repartidor.unidadPropia}}</p>
+        <img src="{{this.repartidor.paisOrigen.bandera}}" width="100px" height="70px"/>
+    </div>
+</div>

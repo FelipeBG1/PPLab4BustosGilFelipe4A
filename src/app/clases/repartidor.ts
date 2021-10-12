@@ -3,10 +3,10 @@ export class Repartidor {
     nombre : string;
     edad : number;
     capacidadTransporte : number;
-    paisOrigen : string;
+    paisOrigen : any = "";
     unidadPropia : boolean;
 
-    constructor(dni : number,nombre : string,  edad : number,  capacidadTransporte : number, paisOrigen : string, unidadPropia : boolean)
+    constructor(dni : number,nombre : string,  edad : number,  capacidadTransporte : number, paisOrigen : any, unidadPropia : boolean)
     {
         this.dni = dni;
         this.nombre = nombre;

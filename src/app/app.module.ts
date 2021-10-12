@@ -11,6 +11,12 @@ import { BienvenidaComponent } from './paginas/bienvenida/bienvenida.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { AltaRepartidorComponent } from './paginas/alta-repartidor/alta-repartidor.component';
 import { TablaPaisesComponent } from './paginas/tabla-paises/tabla-paises.component';
+import { ErrorLogueadoComponent } from './paginas/error-logueado/error-logueado.component';
+import { RepartidorDetalleComponent } from './paginas/repartidor-detalle/repartidor-detalle.component';
+import { ListadoRepartidoresComponent } from './paginas/listado-repartidores/listado-repartidores.component';
+import { DetallePaisComponent } from './paginas/detalle-pais/detalle-pais.component';
+import { DetallesRepartidorComponent } from './paginas/detalles-repartidor/detalles-repartidor.component';
+import { ErrorComponent } from './paginas/error/error.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { TablaPaisesComponent } from './paginas/tabla-paises/tabla-paises.compon
     BienvenidaComponent,
     LoginComponent,
     AltaRepartidorComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    ErrorLogueadoComponent,
+    RepartidorDetalleComponent,
+    ListadoRepartidoresComponent,
+    DetallePaisComponent,
+    DetallesRepartidorComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
