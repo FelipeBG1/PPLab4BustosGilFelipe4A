@@ -24,6 +24,16 @@ export class ApiService {
     return this.firebase.collectionGroup('repartidores').valueChanges();
   }
 
+  traerPedidos()
+  {
+    return this.firebase.collection('pedidos').valueChanges({idField: 'id'});
+  }
+
+  modificar(pedido : any, id : any)
+  {
+    return this.firebase.collection('pedidos').doc(id).update(pedido);
+  }
+
 }
 
 

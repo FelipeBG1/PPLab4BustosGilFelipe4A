@@ -17,6 +17,11 @@ import { ListadoRepartidoresComponent } from './paginas/listado-repartidores/lis
 import { DetallePaisComponent } from './paginas/detalle-pais/detalle-pais.component';
 import { DetallesRepartidorComponent } from './paginas/detalles-repartidor/detalles-repartidor.component';
 import { ErrorComponent } from './paginas/error/error.component';
+import { AltaPedidoComponent } from './paginas/alta-pedido/alta-pedido.component';
+import { DeliveryComponent } from './paginas/delivery/delivery.component';
+import { ModificarPedidoComponent } from './paginas/modificar-pedido/modificar-pedido.component';
+import { CambiarEstadoComponent } from './paginas/cambiar-estado/cambiar-estado.component';
+import { ErrorAdminComponent } from './paginas/error-admin/error-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { ErrorComponent } from './paginas/error/error.component';
     ListadoRepartidoresComponent,
     DetallePaisComponent,
     DetallesRepartidorComponent,
-    ErrorComponent
+    ErrorComponent,
+    AltaPedidoComponent,
+    DeliveryComponent,
+    ModificarPedidoComponent,
+    CambiarEstadoComponent,
+    ErrorAdminComponent
   ],
   imports: [
     BrowserModule,

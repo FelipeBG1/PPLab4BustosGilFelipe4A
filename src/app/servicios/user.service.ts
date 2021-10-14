@@ -7,6 +7,7 @@ import { Usuario } from '../clases/usuario';
 export class UserService {
 
   logeado : any = false;
+  administrador : boolean = false;
 
   empleado : Usuario = {
     usuario : "empleado",
@@ -31,7 +32,9 @@ export class UserService {
       if(usuario.usuario == this.admin.usuario && usuario.clave == this.admin.clave)
       {
         this.logeado = true;
+        this.administrador = true;
       }
     }
   }
 }
+  

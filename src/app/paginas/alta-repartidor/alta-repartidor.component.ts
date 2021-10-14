@@ -49,7 +49,7 @@ export class AltaRepartidorComponent implements OnInit {
     }
     let repartidor : Repartidor = new Repartidor(this.grupoControles.get("dni")?.value,this.grupoControles.get("nombre")?.value,this.grupoControles.get("edad")?.value,this.grupoControles.get("capacidadTransporte")?.value,pais,this.grupoControles.get("unidadPropia")?.value);
     
-    this.agregarPeliculaBD({...repartidor}).then((response : any) => {
+    this.agregarRepartidorBD({...repartidor}).then((response : any) => {
       console.log("repartidor registrado");
       this.agregado = "Se agrego el repartidor";
       setTimeout(() => {
@@ -69,7 +69,7 @@ export class AltaRepartidorComponent implements OnInit {
    
   }
 
-  agregarPeliculaBD(repartidor : Repartidor)
+  agregarRepartidorBD(repartidor : Repartidor)
   {
     return this.firestore.collection("repartidores").add(repartidor);
   }

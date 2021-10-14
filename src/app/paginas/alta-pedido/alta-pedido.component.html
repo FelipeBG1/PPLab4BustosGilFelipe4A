@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="mt-5 row">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Pedido</h4>
+        <form class="needs-validation" [formGroup]="grupoControles" (ngSubmit)='enviarPedido()'>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="firstName">Cliente</label>
+                <input type="text" class="form-control" formControlName='nombreCliente' placeholder="Ingrese el cliente">
+                <small class="invalid" *ngIf="grupoControles.controls.nombreCliente.errors?.required && grupoControles.controls.nombreCliente.touched">El nombre del cliente es requerido</small>
+              </div>
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Mail cliente</label>
+              <input type="text" class="form-control" formControlName='mail' placeholder="Ingrese el mail">
+              <small class="invalid" *ngIf="grupoControles.controls.mail.errors?.required && grupoControles.controls.mail.touched">El mail es requerido</small>
+            </div>
+            <div class="col-sm-12">
+                <label for="firstName">Localidad</label>
+                <select formControlName="localidad" class="form-control" name="" id="">
+                  <option value="Burzaco">Burzaco</option>
+                  <option value="Avellaneda">Avellaneda</option>
+                  <option value="Glew">Glew</option>
+                  <option value="Puerto Madero">Puerto Madero</option>
+                  <option value="Adrogue">Adrogue</option>
+                </select>
+                <small class="invalid" *ngIf="grupoControles.controls.localidad.errors?.required && grupoControles.controls.localidad.touched">La localidad es requerida</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Direccion</label>
+                <input type="text" class="form-control" formControlName='direccion' placeholder="Ingrese la direccion">
+                <small class="invalid" *ngIf="grupoControles.controls.direccion.errors?.required && grupoControles.controls.direccion.touched">La direccion es requerida</small>
+              </div>
+            <div class="col-md-6 mb-3">
+                <label for="firstName">Descripcion</label>
+                <input type="text" class="form-control" formControlName='descripcion' placeholder="Ingrese la descripcion">         
+                <small class="invalid" *ngIf="grupoControles.controls.descripcion.errors?.required && grupoControles.controls.descripcion.touched">La descripcion</small>
+                <small class="invalid" *ngIf="grupoControles.controls.descripcion.errors?.maxlength">Maximo 100 caracteres</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="firstName">Precio</label>
+                <input type="number" class="form-control" formControlName='precio' placeholder="Ingrese el precio">
+                <small class="invalid" *ngIf="grupoControles.controls.precio.errors?.required && grupoControles.controls.precio.touched">El precio es requerido</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Peso</label>
+                <input type="text" class="form-control" formControlName='peso' placeholder="Ingrese el peso">
+                <small class="invalid" *ngIf="grupoControles.controls.peso.errors?.required && grupoControles.controls.peso.touched">El peso es requirido</small>
+                <small class="invalid" *ngIf="grupoControles.controls.peso.errors?.min && grupoControles.controls.peso.errors?.max">El peso debe estar entre 500 y 1000 gramos</small>
+              </div>
+              <div class="col-sm-12">
+                <label for="firstName">Estado</label>
+                <select formControlName="estado" class="form-control" name="" id="">
+                  <option value="Listo sin entregar">Listo sin entregar</option>
+                </select>
+                <small class="invalid" *ngIf="grupoControles.controls.estado.errors?.required && grupoControles.controls.estado.touched">El estado es requerido</small>
+              </div>
+          </div> 
+          <hr class="mb-4">
+          <button type="submit" class="mb-5 btn btn-dark btn-lg btn-block" [disabled]='grupoControles.invalid' >Agregar pedido</button>
+        </form>
+      </div>
+    </div>
+</div>

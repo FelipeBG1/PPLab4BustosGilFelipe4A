@@ -1,0 +1,5 @@
+<div *ngIf='this.pedido != ""'>
+    <p>Estado</p>
+    <button class="btn btn-dark" (click)='this.cambiarEstado(1)'>Entregado</button>
+    <button class="btn btn-dark" (click)='this.cambiarEstado(2)'>Rechazado</button>
+</div>
